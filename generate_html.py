@@ -56,3 +56,4 @@ if __name__ == "__main__":
     generate_html(kb=100)
     generate_html(mb=1)
     generate_html(mb=5)
+    generate_html(mb=10)
