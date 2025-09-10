@@ -28,7 +28,7 @@ func main()  {
         ctx.File("./html/5120kb.html")
     })
     router.GET("/sepuluhmb", func(ctx *gin.Context) {
-        ctx.File("./html/10240.html")
+        ctx.File("./html/10240kb.html")
     })
     router.Run(":8080")
 }
