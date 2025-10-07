@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package fileserver;
+
+option go_package = "/fileserverpb";
+
+service FileService {
+  rpc GetFile (FileRequest) returns (FileResponse);
+}
+
+message FileRequest {
+  string filename = 1; 
+}
+
+message FileResponse {
+  bytes content = 1; 
+}
