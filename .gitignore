@@ -1,0 +1,64 @@
+# ===============================
+#   Python
+# ===============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Test / coverage
+.coverage
+.tox/
+.pytest_cache/
+htmlcov/
+
+# Jupyter / notebooks
+.ipynb_checkpoints
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+*.stats.csv
+*.stats_history.csv
+*.failures.csv
+*.html
+locust.log
+
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.docx
+*.zip
+
+/bin/
+/build/
+/out/
+
+*.out
+
+.DS_Store
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+*~

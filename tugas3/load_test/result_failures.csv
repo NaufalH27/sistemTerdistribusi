@@ -1,0 +1,31 @@
+Method,Name,Error,Occurrences
+GET,/limamb,RemoteDisconnected('Remote end closed connection without response'),14
+GET,/satumb,"ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x....>, 'Connection to tugas.halonopal.space timed out. (connect timeout=10)')",141
+GET,/limamb,"ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x....>, 'Connection to tugas.halonopal.space timed out. (connect timeout=10)')",153
+GET,/limamb,"SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))",3
+GET,/,RemoteDisconnected('Remote end closed connection without response'),23
+GET,/seratuskb,RemoteDisconnected('Remote end closed connection without response'),15
+GET,/satumb,"ReadTimeout(ReadTimeoutError(""HTTPSConnectionPool(host='tugas.halonopal.space', port=443): Read timed out. (read timeout=10)""))",422
+GET,/sepuluhmb,"SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))",1
+GET,/sepuluhkb,RemoteDisconnected('Remote end closed connection without response'),11
+GET,/sepuluhmb,"ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x....>, 'Connection to tugas.halonopal.space timed out. (connect timeout=10)')",173
+GET,/seratuskb,"ReadTimeout(ReadTimeoutError(""HTTPSConnectionPool(host='tugas.halonopal.space', port=443): Read timed out. (read timeout=10)""))",421
+GET,/sepuluhkb,"ReadTimeout(ReadTimeoutError(""HTTPSConnectionPool(host='tugas.halonopal.space', port=443): Read timed out. (read timeout=10)""))",420
+GET,/sepuluhmb,"ReadTimeoutError(""HTTPSConnectionPool(host='tugas.halonopal.space', port=443): Read timed out."")",32
+GET,/satumb,"ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)",39
+GET,/seratuskb,"ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x....>, 'Connection to tugas.halonopal.space timed out. (connect timeout=10)')",152
+GET,/sepuluhmb,"ReadTimeout(ReadTimeoutError(""HTTPSConnectionPool(host='tugas.halonopal.space', port=443): Read timed out. (read timeout=10)""))",434
+GET,/sepuluhkb,"SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))",1
+GET,/limamb,"ReadTimeoutError(""HTTPSConnectionPool(host='tugas.halonopal.space', port=443): Read timed out."")",37
+GET,/limamb,"ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)",35
+GET,/sepuluhmb,"ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)",38
+GET,/seratuskb,"SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)'))",1
+GET,/limamb,"ReadTimeout(ReadTimeoutError(""HTTPSConnectionPool(host='tugas.halonopal.space', port=443): Read timed out. (read timeout=10)""))",402
+GET,/sepuluhmb,RemoteDisconnected('Remote end closed connection without response'),10
+GET,/seratuskb,"ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)",42
+GET,/sepuluhkb,"ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)",46
+GET,/,"ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)",36
+GET,/,"ReadTimeout(ReadTimeoutError(""HTTPSConnectionPool(host='tugas.halonopal.space', port=443): Read timed out. (read timeout=10)""))",425
+GET,/,"ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x....>, 'Connection to tugas.halonopal.space timed out. (connect timeout=10)')",205
+GET,/sepuluhkb,"ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x....>, 'Connection to tugas.halonopal.space timed out. (connect timeout=10)')",189
+GET,/satumb,RemoteDisconnected('Remote end closed connection without response'),12
