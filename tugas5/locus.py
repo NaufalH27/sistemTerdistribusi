@@ -7,21 +7,27 @@ import fileserverpb.fileserver_pb2_grpc as pb_grpc
 
 class GrpcUser(User):
     wait_time = between(0.1, 2)
+    request_timeout = 10 
 
     def on_start(self):
         target = self.environment.host
         if not target:
-            raise ValueError("Specify gRPC host using --host (e.g. --host=localhost:50051)")
+            raise ValueError("Specify gRPC host using --host")
 
-        self.channel = grpc.insecure_channel(
-            target,
-            options=[
-                ('grpc.max_receive_message_length', 20 * 1024 * 1024),  
+        if "443" in target or "https" in target:
+            creds = grpc.ssl_channel_credentials()
+            self.channel = grpc.secure_channel(target, creds, options=[
+                ('grpc.max_receive_message_length', 20 * 1024 * 1024),
                 ('grpc.max_send_message_length', 20 * 1024 * 1024),
-            ]
-        )
+            ])
+        else:
+            self.channel = grpc.insecure_channel(target, options=[
+                ('grpc.max_receive_message_length', 20 * 1024 * 1024),
+                ('grpc.max_send_message_length', 20 * 1024 * 1024),
+            ])
+
         self.stub = pb_grpc.FileServiceStub(self.channel)
-        self.request_timeout = 10  
+
 
     def _do_request(self, name, filename):
         start_time = time.time()

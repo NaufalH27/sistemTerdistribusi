@@ -37,7 +37,6 @@ htmlcov/
 *.stats.csv
 *.stats_history.csv
 *.failures.csv
-*.html
 locust.log
 
 *.exe
