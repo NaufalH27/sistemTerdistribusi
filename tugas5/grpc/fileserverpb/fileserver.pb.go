@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.10
 // 	protoc        v6.32.1
-// source: fileserver.proto
+// source: fileserverpb/fileserver.proto
 
 package fileserverpb
 
@@ -30,7 +30,7 @@ type FileRequest struct {
 
 func (x *FileRequest) Reset() {
 	*x = FileRequest{}
-	mi := &file_fileserver_proto_msgTypes[0]
+	mi := &file_fileserverpb_fileserver_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42,7 +42,7 @@ func (x *FileRequest) String() string {
 func (*FileRequest) ProtoMessage() {}
 
 func (x *FileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_fileserver_proto_msgTypes[0]
+	mi := &file_fileserverpb_fileserver_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +55,7 @@ func (x *FileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FileRequest.ProtoReflect.Descriptor instead.
 func (*FileRequest) Descriptor() ([]byte, []int) {
-	return file_fileserver_proto_rawDescGZIP(), []int{0}
+	return file_fileserverpb_fileserver_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *FileRequest) GetFilename() string {
@@ -65,28 +65,28 @@ func (x *FileRequest) GetFilename() string {
 	return ""
 }
 
-type FileChunk struct {
+type FileResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Content       []byte                 `protobuf:"bytes,1,opt,name=content,proto3" json:"content,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *FileChunk) Reset() {
-	*x = FileChunk{}
-	mi := &file_fileserver_proto_msgTypes[1]
+func (x *FileResponse) Reset() {
+	*x = FileResponse{}
+	mi := &file_fileserverpb_fileserver_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *FileChunk) String() string {
+func (x *FileResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FileChunk) ProtoMessage() {}
+func (*FileResponse) ProtoMessage() {}
 
-func (x *FileChunk) ProtoReflect() protoreflect.Message {
-	mi := &file_fileserver_proto_msgTypes[1]
+func (x *FileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_fileserverpb_fileserver_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -97,51 +97,51 @@ func (x *FileChunk) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FileChunk.ProtoReflect.Descriptor instead.
-func (*FileChunk) Descriptor() ([]byte, []int) {
-	return file_fileserver_proto_rawDescGZIP(), []int{1}
+// Deprecated: Use FileResponse.ProtoReflect.Descriptor instead.
+func (*FileResponse) Descriptor() ([]byte, []int) {
+	return file_fileserverpb_fileserver_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *FileChunk) GetContent() []byte {
+func (x *FileResponse) GetContent() []byte {
 	if x != nil {
 		return x.Content
 	}
 	return nil
 }
 
-var File_fileserver_proto protoreflect.FileDescriptor
+var File_fileserverpb_fileserver_proto protoreflect.FileDescriptor
 
-const file_fileserver_proto_rawDesc = "" +
+const file_fileserverpb_fileserver_proto_rawDesc = "" +
 	"\n" +
-	"\x10fileserver.proto\x12\n" +
+	"\x1dfileserverpb/fileserver.proto\x12\n" +
 	"fileserver\")\n" +
 	"\vFileRequest\x12\x1a\n" +
-	"\bfilename\x18\x01 \x01(\tR\bfilename\"%\n" +
-	"\tFileChunk\x12\x18\n" +
-	"\acontent\x18\x01 \x01(\fR\acontent2P\n" +
-	"\vFileService\x12A\n" +
-	"\rGetFileStream\x12\x17.fileserver.FileRequest\x1a\x15.fileserver.FileChunk0\x01B1Z/github.com/NaufalH27/tugas5/server/fileserverpbb\x06proto3"
+	"\bfilename\x18\x01 \x01(\tR\bfilename\"(\n" +
+	"\fFileResponse\x12\x18\n" +
+	"\acontent\x18\x01 \x01(\fR\acontent2K\n" +
+	"\vFileService\x12<\n" +
+	"\aGetFile\x12\x17.fileserver.FileRequest\x1a\x18.fileserver.FileResponseB\x0fZ\r/fileserverpbb\x06proto3"
 
 var (
-	file_fileserver_proto_rawDescOnce sync.Once
-	file_fileserver_proto_rawDescData []byte
+	file_fileserverpb_fileserver_proto_rawDescOnce sync.Once
+	file_fileserverpb_fileserver_proto_rawDescData []byte
 )
 
-func file_fileserver_proto_rawDescGZIP() []byte {
-	file_fileserver_proto_rawDescOnce.Do(func() {
-		file_fileserver_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_fileserver_proto_rawDesc), len(file_fileserver_proto_rawDesc)))
+func file_fileserverpb_fileserver_proto_rawDescGZIP() []byte {
+	file_fileserverpb_fileserver_proto_rawDescOnce.Do(func() {
+		file_fileserverpb_fileserver_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_fileserverpb_fileserver_proto_rawDesc), len(file_fileserverpb_fileserver_proto_rawDesc)))
 	})
-	return file_fileserver_proto_rawDescData
+	return file_fileserverpb_fileserver_proto_rawDescData
 }
 
-var file_fileserver_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_fileserver_proto_goTypes = []any{
-	(*FileRequest)(nil), // 0: fileserver.FileRequest
-	(*FileChunk)(nil),   // 1: fileserver.FileChunk
+var file_fileserverpb_fileserver_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_fileserverpb_fileserver_proto_goTypes = []any{
+	(*FileRequest)(nil),  // 0: fileserver.FileRequest
+	(*FileResponse)(nil), // 1: fileserver.FileResponse
 }
-var file_fileserver_proto_depIdxs = []int32{
-	0, // 0: fileserver.FileService.GetFileStream:input_type -> fileserver.FileRequest
-	1, // 1: fileserver.FileService.GetFileStream:output_type -> fileserver.FileChunk
+var file_fileserverpb_fileserver_proto_depIdxs = []int32{
+	0, // 0: fileserver.FileService.GetFile:input_type -> fileserver.FileRequest
+	1, // 1: fileserver.FileService.GetFile:output_type -> fileserver.FileResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -149,26 +149,26 @@ var file_fileserver_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_fileserver_proto_init() }
-func file_fileserver_proto_init() {
-	if File_fileserver_proto != nil {
+func init() { file_fileserverpb_fileserver_proto_init() }
+func file_fileserverpb_fileserver_proto_init() {
+	if File_fileserverpb_fileserver_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_fileserver_proto_rawDesc), len(file_fileserver_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_fileserverpb_fileserver_proto_rawDesc), len(file_fileserverpb_fileserver_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_fileserver_proto_goTypes,
-		DependencyIndexes: file_fileserver_proto_depIdxs,
-		MessageInfos:      file_fileserver_proto_msgTypes,
+		GoTypes:           file_fileserverpb_fileserver_proto_goTypes,
+		DependencyIndexes: file_fileserverpb_fileserver_proto_depIdxs,
+		MessageInfos:      file_fileserverpb_fileserver_proto_msgTypes,
 	}.Build()
-	File_fileserver_proto = out.File
-	file_fileserver_proto_goTypes = nil
-	file_fileserver_proto_depIdxs = nil
+	File_fileserverpb_fileserver_proto = out.File
+	file_fileserverpb_fileserver_proto_goTypes = nil
+	file_fileserverpb_fileserver_proto_depIdxs = nil
 }

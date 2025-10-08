@@ -51,7 +51,7 @@ func main() {
 
     pb.RegisterFileServiceServer(s, &server{})
 
-    log.Println("High-performance gRPC server running on 127.0.0.1:50051...")
+    log.Println("running on 127.0.0.1:50051...")
     if err := s.Serve(lis); err != nil {
         log.Fatalf("failed to serve: %v", err)
     }

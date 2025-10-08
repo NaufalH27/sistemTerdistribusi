@@ -1,6 +1,5 @@
 import grpc from 'k6/net/grpc';
 import { check, sleep } from 'k6';
-import { htmlReport } from 'https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js';
 
 export const options = {
   stages: [
@@ -63,10 +62,4 @@ export default function () {
 
 export function teardown() {
   client.close();
-}
-
-export function handleSummary(data) {
-    return {
-        'report.html': htmlReport(data),
-    };
 }
