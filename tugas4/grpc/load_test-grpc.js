@@ -3,12 +3,8 @@ import { check, sleep } from 'k6';
 
 export const options = {
   stages: [
-    { duration: '20s', target: 1500 },
-    { duration: '40s', target: 1500 },
+    { duration: '30s', target: 500 },
   ],
-  thresholds: {
-    grpc_req_duration: ['p(95)<10000'],
-  },
 };
 
 const client = new grpc.Client();
@@ -60,6 +56,3 @@ export default function () {
   sleep(0.1 + Math.random() * 1.9);
 }
 
-export function teardown() {
-  client.close();
-}

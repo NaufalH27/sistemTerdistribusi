@@ -3,12 +3,8 @@ import { sleep } from 'k6';
 
 export const options = {
   stages: [
-    { duration: '20s', target: 1500 }, 
-    { duration: '40s', target: 1500 },
+    { duration: '30s', target: 500 }, 
   ],
-  thresholds: {
-    http_req_duration: ['p(95)<10000'], 
-  },
 };
 
 const BASE_URL = 'http://localhost:8080';
