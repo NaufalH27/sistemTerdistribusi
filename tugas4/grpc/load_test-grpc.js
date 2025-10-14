@@ -3,24 +3,17 @@ import { check, sleep } from 'k6';
 import { Trend, Counter } from 'k6/metrics';
 
 const responseTime = {
-  'sepuluhkb': new Trend('response_time_sepuluhkb'),
-  'seratuskb': new Trend('response_time_seratuskb'),
-  'satumb': new Trend('response_time_satumb'),
-  'limamb': new Trend('response_time_limamb'),
-  'sepuluhmb': new Trend('response_time_sepuluhmb'),
-};
-
-const successRate = {
-  'sepuluhkb': new Counter('success_rate_sepuluhkb'),
-  'seratuskb': new Counter('success_rate_seratuskb'),
-  'satumb': new Counter('success_rate_satumb'),
-  'limamb': new Counter('success_rate_limamb'),
-  'sepuluhmb': new Counter('success_rate_sepuluhmb'),
+  'sepuluhkb': new Trend('response_time_sepuluhkb', true, { unit: 'ms' }),
+  'seratuskb': new Trend('response_time_seratuskb', true, { unit: 'ms' }),
+  'satumb': new Trend('response_time_satumb', true, { unit: 'ms' }),
+  'limamb': new Trend('response_time_limamb', true, { unit: 'ms' }),
+  'sepuluhmb': new Trend('response_time_sepuluhmb', true, { unit: 'ms' }),
 };
 
 export const options = {
   stages: [
-    { duration: '30s', target: 500 }, 
+    { duration: '5s', target: 300 }, 
+    { duration: '25s', target: 300 }, 
   ],
 };
 
@@ -68,32 +61,10 @@ export default function () {
     responseTime[chosen.filename].add(duration);
 
     if (response && response.status === grpc.StatusOK) {
-      successRate[chosen.filename].add(1);
     } else {
     }
   } catch (err) {
   }
 
   sleep(0.1 + Math.random() * 1.9);
-}
-
-export function handleSummary(data) {
-  console.log('\nGRPC Endpoint Performance Summary:');
-  console.log('-----------------------------------------------------------');
-  console.log('| Endpoint   | Min (ms) | Max (ms) | Avg (ms) | Success % |');
-  console.log('-----------------------------------------------------------');
-
-  const endpoints = Object.keys(responseTime);
-  endpoints.forEach((ep) => {
-    const trend = data.metrics[`response_time_${ep}`];
-    const counter = data.metrics[`success_rate_${ep}`];
-    const success = trend && counter ? ((counter.count / trend.count) * 100).toFixed(2) : '0.00';
-    if (trend) {
-      console.log(`| ${ep.padEnd(10)} | ${trend.min.toFixed(2).padStart(8)} | ${trend.max.toFixed(2).padStart(8)} | ${trend.avg.toFixed(2).padStart(8)} | ${success.padStart(9)} |`);
-    }
-  });
-
-  console.log('-----------------------------------------------------------\n');
-
-  return {}; 
 }
