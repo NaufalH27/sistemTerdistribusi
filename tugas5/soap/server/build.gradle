@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.sun.xml.ws:jaxws-rt:2.3.5'
+}
+
+application {
+    mainClass = 'com.example.soap.Main'
+}
